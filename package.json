@@ -1,0 +1,13 @@
+{
+    "name": "google-mobile",
+    "version": "0.1.1",
+    "private": true,
+    "scripts": {
+        "start": "node ./google-hk"
+    },
+    "dependencies": {
+        "pm2": "~0.12.16",
+        "request": "~2.67.0",
+        "iconv-lite": "~0.4.13"
+    }
+}
