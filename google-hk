@@ -28,11 +28,10 @@ var server = http.createServer(function(request, response) {
             if (err) {
                 response.write("http client error: " + err.message);
             } else {
+		response.writeHead(res.statusCode, res.headers);
                 if (/html/i.test(request.headers.accept)) {
                     console.log(request.headers);
-                    response.writeHead(200, {
-                        "content-type": "text/html; charset=utf-8"
-                    });
+                    // response.writeHead(200, { "Content-Type": "text/html; charset=UTF-8" });
                 }
                 response.write(body);
             }
