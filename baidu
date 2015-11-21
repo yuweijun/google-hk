@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var http = require("http");
+var spider = require("request");
+
+var server = http.createServer(function(request, response) {
+    var baidu = "https://www.baidu.com";
+
+    console.log(request.url);
+    var headers = {
+        "user-agent": request.headers["user-agent"]
+    };
+    var options = {
+        headers: headers,
+        encoding: null,
+        url: baidu + request.url
+    };
+    var handler = function(err, res, body) {
+        if (err) {
+            response.write("http client error: " + err.message);
+        } else {
+            response.writeHead(res.statusCode, res.headers);
+            response.write(body);
+        }
+        response.end();
+    }
+
+    spider(options, handler);
+});
+
+server.listen(7000);
+console.log("baidu spider server is listening on port 7000");

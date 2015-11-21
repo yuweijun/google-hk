@@ -1,7 +1,7 @@
 {
     "apps": [{
-        "name": "google-hk",
-        "script": "google-hk",
+        "name": "www.baidu.com",
+        "script": "baidu",
         "log_date_format": "YYYY-MM-DD HH:mm Z",
         "ignore_watch": ["[\\/\\\\]\\./", "node_modules"],
         "watch": false,
@@ -9,3 +9,4 @@
         "autorestart": true
     }]
 }
+
