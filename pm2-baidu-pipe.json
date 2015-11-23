@@ -1,0 +1,12 @@
+{
+    "apps": [{
+        "name": "www.baidu.com",
+        "script": "baidu-pipe",
+        "log_date_format": "YYYY-MM-DD HH:mm Z",
+        "ignore_watch": ["[\\/\\\\]\\./", "node_modules"],
+        "watch": false,
+        "vizion": true,
+        "autorestart": true
+    }]
+}
+
