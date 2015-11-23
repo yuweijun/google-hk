@@ -5,6 +5,7 @@ var proxy = require("request");
 
 var server = http.createServer(function(request, response) {
     console.log(request.url);
+    request.headers.host = "www.google.com.hk";
     var url = "https://www.google.com.hk" + request.url;
     request.pipe(proxy(url)).pipe(response);
 });
