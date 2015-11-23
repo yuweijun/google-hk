@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+var http = require("http");
+var proxy = require("request");
+
+var server = http.createServer(function(request, response) {
+    console.log(request.url);
+    request.headers.host = "www.baidu.com";
+    var url = "https://www.baidu.com" + request.url;
+    request.pipe(proxy(url)).pipe(response);
+});
+
+server.listen(8000);
+console.log("baidu search page spider server is listening on 8000");
